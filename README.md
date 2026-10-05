@@ -5,7 +5,7 @@ Screens a Chinese green bond on two questions:
 1. **Is the bond actually green?** Scored against the ICMA Green Bond Principles (GBP) and the PBoC 《绿色债券支持项目目录》.
 2. **Can the issuer service the debt?** Interest coverage and leverage computed from audited financial statements.
 
-Bond under review: **2026年度第一期绿色科技创新债券** (Goldwind, 2026 Series 1 Green Technology Innovation Bond).
+Bond under review: **金风科技股份有限公司2026年度第二期绿色科技创新债券** (Goldwind 2026 Series 2 Green Technology Innovation Bond; short name 26金风科技MTN002(科创债), code 102683199). RMB 1 billion, 3+N perpetual medium-term note, issued 19 Aug 2026, coupon 2.00%, accounted for as equity. Pre-issuance green assessment by 联合赤道 (Lianhe Equator): grade G1.
 
 > Student research project. Not investment advice. Not affiliated with Goldwind.
 
@@ -76,7 +76,8 @@ Chinese terms:
 
 ## Known limitations
 
-- Annual ratios only. No LTM figure yet, so the 2026 bond is not reflected: the 2026-06-30 balance sheet still shows 应付债券 at 0.
+- Annual ratios only. No LTM figure yet.
+- Goldwind's perpetual notes are booked in equity (其他权益工具: RMB 46.43 亿 at FY2025, incl. RMB 21.43 亿 renewable trust loans), so they are not in 应付债券 or in total debt. An adjusted-debt view that adds them is pending.
 - Whether 长期应付款 bears interest is unverified, so both base and broad Debt/EBITDA are reported.
 - 租赁负债 only exists from the 2019 lease-standard change, which breaks comparability before 2019.
 - Missing 应付债券, 租赁负债, 长期待摊费用摊销 and 使用权资产折旧 values are treated as 0.
