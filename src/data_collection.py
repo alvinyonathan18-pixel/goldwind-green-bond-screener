@@ -40,6 +40,8 @@ SINA_INCOME_COLS = {                         # income statement (利润表)
     "营业总收入": "revenue",                   # total operating revenue
     "利润总额": "pretax_profit",               # total profit = profit before tax
     "利息费用": "interest_expense",            # interest expense
+    "投资收益": "investment_income",           # investment income (excluded in adjusted view)
+    "公允价值变动收益": "fair_value_gain",      # fair-value gains (excluded in adjusted view)
 }
 SINA_BALANCE_COLS = {                        # balance sheet (资产负债表)
     "货币资金": "cash",                                      # cash and cash equivalents
@@ -51,6 +53,7 @@ SINA_BALANCE_COLS = {                        # balance sheet (资产负债表)
     "长期应付款": "long_term_payables",                      # long-term payables (not in base total debt)
     "负债合计": "total_liabilities",                         # total liabilities
     "资产总计": "total_assets",                              # total assets
+    "其他权益工具": "other_equity_instruments",              # perpetual notes + renewable trust loans booked as equity
 }
 EASTMONEY_DATE_COL = "REPORT_DATE"
 EASTMONEY_CASHFLOW_COLS = {                  # cash flow statement (现金流量表), supplementary items
@@ -65,6 +68,8 @@ DISPLAY_LABELS = {
     "revenue": "Revenue (营业总收入)",
     "pretax_profit": "Pretax profit (利润总额)",
     "interest_expense": "Interest expense (利息费用)",
+    "investment_income": "Investment income (投资收益)",
+    "fair_value_gain": "Fair-value gains (公允价值变动收益)",
     "ebit": "EBIT (息税前利润)",
     "da": "D&A (折旧摊销)",
     "ebitda": "EBITDA (息税折旧摊销前利润)",
@@ -74,6 +79,7 @@ DISPLAY_LABELS = {
     "total_debt_broad": "Total debt incl. LT payables (含长期应付款总债务)",
     "total_liabilities": "Total liabilities (负债合计)",
     "total_assets": "Total assets (资产总计)",
+    "other_equity_instruments": "Other equity instruments (其他权益工具, perpetuals)",
 }
 
 
