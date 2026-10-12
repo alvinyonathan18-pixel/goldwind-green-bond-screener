@@ -1,0 +1,11 @@
+﻿bond_id,label_l1,label_l2,label_note
+fsh_water_2026,6,6.4,high / alt none / non-green 0%
+fuzhou_metro_2026,6,6.2,high / alt none / non-green 0%
+jinneng_power_2026,4,4.2,high / alt none / non-green 0%
+cecep_2026,3;4;6,3.2;4.2;6.4,low / alt 2.5 / non-green 0% / 2.5 = animal disposal / 3.2 and 6.4 both cover waste incineration
+cepg_env_2025,3;6,3.2;6.4,med / alt none / non-green 0% / two L2: waste as recycled resource (3.2) and environmental infrastructure (6.4)
+changzhou_binjiang_2020,1;6,1.3;6.5,med / alt none / non-green 50% / two L2: energy-saving retrofit (1.3) and urban energy infrastructure (6.5)
+henan_water_2021,2;5,2.3;5.2,med / alt none / non-green 30% / two L2: water pollution control (2.3) and ecological restoration (5.2)
+powerchina_newenergy_2026,4,4.2,high / alt none / non-green 0%
+yuexiu_newenergy_2026,4,4.2,high / alt none / non-green 0%
+yunnan_water_2023,2;5,2.3;5.2,low / alt 6.4 / non-green 0%

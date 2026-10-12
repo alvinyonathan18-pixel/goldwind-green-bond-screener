@@ -32,17 +32,24 @@ GOLD_CSV = LABELS / "gold_labels.csv"
 
 MAX_PROJECT_CHARS = 800      # project overview is cut here (at a sentence end if possible)
 MAX_LEAD_CHARS = 1500
+MAX_TABLE_CHARS = 1200       # text of the first table (project names are often only there)
 
-CHAPTER = re.compile(r"^第[一二三四五六七八九十]+章\s*募集资金(用途|运用)\s*$")
-SECTION_ONE = re.compile(r"^一、.*募集资金(用途|运用)\s*$")
+CHAPTER = re.compile(r"^第[一二三四五六七八九十]+[章节条]\s*募集资金(用途|运用)\s*$")
+SECTION_ONE = re.compile(r"^一、\s*[^。]{0,12}募集资金(用途|运用)[^。]{0,12}$")
+SECTION_ONE_TEXT = re.compile(r"^[^。]{0,12}募集资金(用途|运用)[^。]{0,12}$")   # when "一、" sits alone on the previous line
 SUBHEADING = re.compile(r"^（[一二三四五六七八九十]+）")
 TOP_HEADING = re.compile(r"^[二三四五六七八九十]、")
-PROJECT_HEADING = re.compile(r"^（[一二三四五六七八九十]+）\s*募投项目(的)?(基本情况|概况)\s*$")
+PROJECT_HEADING = re.compile(r"^((（[一二三四五六七八九十]+）\s*募投项目(的)?(基本情况|概况))|([二三]、\s*募集资金投资项目概况))\s*$")
 TABLE_MARKER = re.compile(r"^(图表|表)\s*\d+\s*[-－–]\s*\d+")
 PAGE_NOISE = re.compile(r"^(\d{1,3}|.{0,60}募集说明书)$")      # page numbers and running headers
 REFINANCING = re.compile(r"偿还|归还|置换|借款|有息债务|有息负债")
 EDITION_2025 = "绿色金融支持项目目录（2025年版）"
-EDITION_2021 = "绿色债券支持项目目录（2021年版）"
+EDITIONS = {                 # catalogue names that a prospectus may cite
+    "2025": EDITION_2025,
+    "2021": "绿色债券支持项目目录（2021年版）",
+    "2019": "绿色产业指导目录（2019年版）",
+    "2015": "绿色债券支持项目目录（2015年版）",
+}
 
 
 def read_lines(pdf: Path) -> tuple[list[str], str]:
@@ -82,7 +89,29 @@ def collect(lines: list[str], start: int, stop_patterns: list, cap: int) -> str:
     return text
 
 
-TABLE_STUB = re.compile(r"[，、]?(?:相关要素|具体明细|基本情况|相关明细|明细)?(?:如下表所示|详见下表|见下表|如下)：")
+TABLE_STUB = re.compile(r"[，、]?[^，。：“”]{0,12}?(?:如下表所示|详见下表|见下表|如下)：")
+
+
+def is_section_one(lines: list[str], i: int) -> bool:
+    """Heading '一、...募集资金用途...', also when the numbering '一、' is its own line in the PDF."""
+    if SECTION_ONE.match(lines[i]):
+        return True
+    return i > 0 and lines[i - 1] == "一、" and bool(SECTION_ONE_TEXT.match(lines[i]))
+
+
+def table_text(lines: list[str], start: int) -> str:
+    """Text of the first table after `start`: from its caption line to the next heading or note."""
+    first = next((i for i in range(start, min(start + 60, len(lines))) if TABLE_MARKER.match(lines[i])), None)
+    if first is None:
+        return ""
+    out = []
+    for ln in lines[first + 1:]:
+        if TOP_HEADING.match(ln) or SUBHEADING.match(ln) or ln.startswith(("注：", "注:")):
+            break
+        out.append(ln)
+        if sum(map(len, out)) >= MAX_TABLE_CHARS:
+            break
+    return " ".join(out)[:MAX_TABLE_CHARS]
 
 
 def mask_catalogue_sentences(text: str) -> tuple[str, int]:
@@ -110,34 +139,39 @@ def extract_one(pdf: Path, valid_l2: set[str]) -> dict:
     row = {"bond_id": pdf.stem, "source_file": pdf.name, "status": "ok"}
 
     cover = cover.replace("(", "（").replace(")", "）")
-    issuer = re.search(r"发行人[：:]?([^\s：:]{4,40}?(?:股份有限公司|有限责任公司|有限公司))", cover)
-    title = re.search(r"(20\d\d年度第.{1,3}期.{2,40}?募集说明书)", cover)
-    row["issuer"] = issuer.group(1) if issuer else ""
+    title = (re.search(r".*(20\d\d年度第.{1,3}期[^募]{2,40}?募集说明书)", cover)       # greedy prefix: last occurrence
+             or re.search(r"(20\d\d年.{4,60}?募集说明书)", cover))
+    if not title:                                   # some covers are images: look in the first body text
+        title = re.search(r"(20\d\d年.{4,60}?募集说明书)", flat[:4000])
     row["title"] = title.group(1) if title else ""
-    has25, has21 = EDITION_2025 in flat, EDITION_2021 in flat
-    row["edition_cited"] = "2025+2021" if has25 and has21 else "2025" if has25 else "2021" if has21 else "none"
+    issuer = (re.search(r"发行人[：:]?([^\s：:]{4,40}?(?:股份有限公司|有限责任公司|有限公司))", cover)
+              or re.search(r"20\d\d年(?:度第.{1,3}期)?(.{4,30}?(?:有限公司|集团))", row["title"]))
+    row["issuer"] = issuer.group(1) if issuer else ""
+    found = [year for year, name in EDITIONS.items() if name in flat]
+    row["edition_cited"] = "+".join(sorted(found)) if found else "none"
 
     chapters = [i for i, ln in enumerate(lines) if CHAPTER.match(ln)]
-    lead = project = ""
-    if not chapters:
-        row["status"] = "no_chapter"
+    ch = chapters[-1] if chapters else 0        # the last match is the body; earlier ones are the contents page
+    lead = tbl = project = ""
+    sections = [i for i in range(ch, len(lines)) if is_section_one(lines, i)]
+    sec = None if not sections else (sections[0] if chapters else sections[-1])
+    if sec is None:
+        row["status"] = "no_section_one"
     else:
-        ch = chapters[-1]                       # the last match is the body; earlier ones are the contents page
-        sec = next((i for i in range(ch + 1, len(lines)) if SECTION_ONE.match(lines[i])), None)
-        if sec is None:
-            row["status"] = "no_section_one"
-        else:
-            lead = collect(lines, sec + 1, [TABLE_MARKER, TOP_HEADING], MAX_LEAD_CHARS)
-        prj = next((i for i in range(ch + 1, len(lines)) if PROJECT_HEADING.match(lines[i])), None)
-        if prj is not None:
+        lead = collect(lines, sec + 1, [TABLE_MARKER, TOP_HEADING], MAX_LEAD_CHARS)
+        tbl = table_text(lines, sec + 1)
+        prj = next((i for i in range(sec + 1, len(lines)) if PROJECT_HEADING.match(lines[i])), None)
+        if prj is not None and prj - sec < 400:
             project = collect(lines, prj + 1, [TABLE_MARKER, TOP_HEADING, PROJECT_HEADING], MAX_PROJECT_CHARS)
 
-    input_text, n_masked = mask_catalogue_sentences(TABLE_STUB.sub("。", "".join([lead, project])))
+    stubbed = TABLE_STUB.sub("。", lead).replace("。。", "。")
+    input_text, n_masked = mask_catalogue_sentences("".join([stubbed, ("【表】" + tbl + "。") if tbl else "", project]))
     paths = declared_paths(flat)
     l2 = sorted({".".join(p.split(".")[:2]) for p in paths})
     row.update({
         "refinancing": int(bool(REFINANCING.search(lead))),
         "lead_chars": len(lead),
+        "table_chars": len(tbl),
         "project_chars": len(project),
         "input_chars": len(input_text),
         "sentences_masked": n_masked,
@@ -178,10 +212,11 @@ def main() -> None:
     df.to_csv(EXTRACTED_CSV, index=False, encoding="utf-8-sig")
     added = update_gold_template(list(df["bond_id"]))
 
-    show = ["bond_id", "edition_cited", "refinancing", "input_chars", "sentences_masked", "declared_paths", "status"]
+    show = ["bond_id", "edition_cited", "refinancing", "input_chars", "table_chars", "sentences_masked", "declared_paths", "status"]
     print(df[show].to_string(index=False))
     print(f"\n{len(df)} bonds written to {EXTRACTED_CSV.name}; {added} new rows added to {GOLD_CSV.name}")
-    bad = df[(df["status"] != "ok") | (df["input_chars"] < 150) | (df["declared_paths"] == "")]
+    no_declared = df["edition_cited"].str.contains("2025") & (df["declared_paths"] == "")
+    bad = df[(df["status"] != "ok") | (df["input_chars"] < 150) | no_declared]
     if not bad.empty:
         print("Check by hand:", ", ".join(bad["bond_id"]))
 
