@@ -1,0 +1,35 @@
+EVALUATION  n=10 bonds  (descriptive only; see caveats in the script header)
+
+Exact / overlap match (per bond)
+  L1 set exactly equal                        4/10 =   40%   95% Wilson CI [17%, 69%]
+  L2 set exactly equal                        4/10 =   40%   95% Wilson CI [17%, 69%]
+  L2 at least one ID in common                7/10 =   70%   95% Wilson CI [40%, 89%]
+  L2 overlap, gold alt counted as acceptable  8/10 =   80%   95% Wilson CI [49%, 94%]
+
+Micro precision / recall / F1 over IDs
+  L1: precision 64% (7/11)   recall 44% (7/16)   F1 0.52
+  L2: precision 64% (7/11)   recall 44% (7/16)   F1 0.52
+
+Agreement with declared_* (only 4 bonds have a valid declared category, L2 level)
+  LLM vs declared : 3/4
+  Gold vs declared: 4/4   (gold rows tagged assisted: 0)
+
+Error types (L2)
+  exact                     4
+  disjoint                  2
+  subset_missing_gold       2
+  overlap_mixed             1
+  disjoint_hits_gold_alt    1
+
+Per bond
+  bond_id                     gold L2       LLM L2      type                    notes
+  fsh_water_2026              6.4           2.3         disjoint                LLM listed gold 6.4 only as alt; differs from declared 6.4
+  fuzhou_metro_2026           6.2           6.2         exact                   
+  jinneng_power_2026          4.2           4.2         exact                   
+  cecep_2026                  3.2;4.2;6.4   2.5;4.2     overlap_mixed           LLM chose your alt 2.5; LLM listed gold 3.2;6.4 only as alt
+  cepg_env_2025               3.2;6.4       6.4         subset_missing_gold     
+  changzhou_binjiang_2020     1.3;6.5       4.2         disjoint                LLM listed gold 6.5 only as alt
+  henan_water_2021            2.3;5.2       2.3         subset_missing_gold     LLM listed gold 5.2 only as alt
+  powerchina_newenergy_2026   4.2           4.2         exact                   
+  yuexiu_newenergy_2026       4.2           4.2         exact                   
+  yunnan_water_2023           2.3;5.2       6.4         disjoint_hits_gold_alt  LLM chose your alt 6.4; LLM listed gold 5.2 only as alt

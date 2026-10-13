@@ -1,0 +1,14 @@
+{
+  "cache_key": "7ff67c4ab301ec0a6225d81d1c9c91a47fa3b69aed9f6af40db81b12e5c9a95d",
+  "bond_id": "powerchina_newenergy_2026",
+  "model": "deepseek-flash",
+  "prompt_version": "v1",
+  "temperature": 0,
+  "thinking": "disabled",
+  "usage": {
+    "prompt_tokens": 1962,
+    "completion_tokens": 580
+  },
+  "created_utc": "2026-10-13T13:46:33+00:00",
+  "response_text": "{\"projects\": [{\"project\": \"吉林长岭王子风电场三期(49.5MW)扩建工程项目建设\", \"l2\": \"4.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"用于吉林长岭王子风电场三期(49.5MW)扩建工程项目建设\"}, {\"project\": \"姚安县保顶山风电场项目建设\", \"l2\": \"4.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"用于姚安县保顶山风电场项目建设\"}, {\"project\": \"姚安县龙箐风电场工程项目建设\", \"l2\": \"4.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"用于姚安县龙箐风电场工程项目建设\"}, {\"project\": \"姚安三道箐风电场工程项目建设\", \"l2\": \"4.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"用于姚安三道箐风电场工程项目建设\"}, {\"project\": \"云南省玉溪市华宁县将军山风电场项目建设\", \"l2\": \"4.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"用于云南省玉溪市华宁县将军山风电场项目建设\"}, {\"project\": \"云南省玉溪市华宁县大丫口风电场项目建设\", \"l2\": \"4.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"用于云南省玉溪市华宁县大丫口风电场项目建设\"}, {\"project\": \"大坡顶风电项目建设\", \"l2\": \"4.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"用于大坡顶风电项目建设\"}, {\"project\": \"贵州关岭永宁风电场项目建设\", \"l2\": \"4.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"用于贵州关岭永宁风电场项目建设\"}, {\"project\": \"大甸索光伏发电项目建设\", \"l2\": \"4.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"用于大甸索光伏发电项目建设\"}, {\"project\": \"楚雄州双柏县大庄并网光伏电站建设项目\", \"l2\": \"4.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"用于楚雄州双柏县大庄并网光伏电站建设项目\"}], \"non_green_share_pct\": 0, \"notes\": \"募集资金全部用于偿还清洁能源发电类项目有息负债，穿透后全部用于风力发电和光伏发电项目建设，无补充营运资金等非绿色用途。\"}"
+}

@@ -1,0 +1,14 @@
+{
+  "cache_key": "2781797806beb865f837b6b9388ca710c182ef4b126a980eb69ad16b06afd929",
+  "bond_id": "yuexiu_newenergy_2026",
+  "model": "deepseek-flash",
+  "prompt_version": "v1",
+  "temperature": 0,
+  "thinking": "disabled",
+  "usage": {
+    "prompt_tokens": 1876,
+    "completion_tokens": 111
+  },
+  "created_utc": "2026-10-13T13:46:35+00:00",
+  "response_text": "{\"projects\": [{\"project\": \"户用光伏电站（分布式光伏发电项目）\", \"l2\": \"4.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"该项目为分布式光伏发电项目，分布于湖南地区\"}], \"non_green_share_pct\": 0, \"notes\": \"募集资金用于偿还国新融资租赁有限公司有息债务，穿透后最终用途为项目建设，对应4个户用光伏电站项目，均属清洁能源设施建设和运营。\"}"
+}

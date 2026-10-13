@@ -1,0 +1,14 @@
+{
+  "cache_key": "385e98c9ffcf9404d4131c288297bdd3f9d9b0064d2dc5fa74e1f1b9692ff3b9",
+  "bond_id": "changzhou_binjiang_2020",
+  "model": "deepseek-flash",
+  "prompt_version": "v1",
+  "temperature": 0,
+  "thinking": "disabled",
+  "usage": {
+    "prompt_tokens": 1437,
+    "completion_tokens": 98
+  },
+  "created_utc": "2026-10-13T13:46:19+00:00",
+  "response_text": "{\"projects\": [{\"project\": \"常州高新区清洁供热替代工程项目\", \"l2\": \"4.2\", \"confidence\": \"high\", \"alt_l2\": \"6.5\", \"evidence\": \"常州高新区清洁供热替代工程项目\"}], \"non_green_share_pct\": 50, \"notes\": \"2.50亿元用于补充营运资金，无绿色类别；募投项目为清洁供热替代工程，属清洁能源设施建设和运营。\"}"
+}

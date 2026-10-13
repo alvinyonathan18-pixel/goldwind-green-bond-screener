@@ -1,0 +1,14 @@
+{
+  "cache_key": "daeeedf8b5c18f5f99d62ec4227933f4181d395ec7b20b2f401f43fe97134e84",
+  "bond_id": "henan_water_2021",
+  "model": "deepseek-flash",
+  "prompt_version": "v1",
+  "temperature": 0,
+  "thinking": "disabled",
+  "usage": {
+    "prompt_tokens": 1779,
+    "completion_tokens": 248
+  },
+  "created_utc": "2026-10-13T13:46:26+00:00",
+  "response_text": "{\"projects\":[{\"project\":\"栾川县伊河上游水污染综合防治PPP项目\",\"l2\":\"2.3\",\"confidence\":\"high\",\"alt_l2\":null,\"evidence\":\"栾川县伊河上游水污染综合防治PPP 项目\"},{\"project\":\"平舆县水环境治理和生态修复工程PPP项目\",\"l2\":\"2.3\",\"confidence\":\"high\",\"alt_l2\":\"5.2\",\"evidence\":\"平舆县水环境治理和生态修复工程PPP 项目\"},{\"project\":\"新蔡县水系联通项目一期工程PPP项目\",\"l2\":\"2.3\",\"confidence\":\"high\",\"alt_l2\":null,\"evidence\":\"新蔡县水系联通项目一期工程PPP 项目\"},{\"project\":\"汝南县中心城区水系环境综合治理PPP项目\",\"l2\":\"2.3\",\"confidence\":\"high\",\"alt_l2\":null,\"evidence\":\"汝南县中心城区水系环境综合治理PPP项目\"}],\"non_green_share_pct\":0,\"notes\":\"全部募集资金用于偿还绿色项目建设借款，可穿透至具体项目；其中1.5亿元（30%）用于乡村振兴相关的水污染防治、环境治理工程借款，仍属绿色项目，故非绿色占比为0。\"}"
+}

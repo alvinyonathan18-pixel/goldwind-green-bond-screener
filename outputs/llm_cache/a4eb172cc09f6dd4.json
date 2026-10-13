@@ -1,0 +1,14 @@
+{
+  "cache_key": "a4eb172cc09f6dd4353be0640c01643e0fa151e281c756b8426495fdd82e7d63",
+  "bond_id": "fuzhou_metro_2026",
+  "model": "deepseek-flash",
+  "prompt_version": "v1",
+  "temperature": 0,
+  "thinking": "disabled",
+  "usage": {
+    "prompt_tokens": 1964,
+    "completion_tokens": 336
+  },
+  "created_utc": "2026-10-13T13:46:24+00:00",
+  "response_text": "{\"projects\": [{\"project\": \"福州地铁1号线工程项目建设\", \"l2\": \"6.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"福州市轨道交通1号线工程项目建设\"}, {\"project\": \"福州地铁2号线工程项目建设\", \"l2\": \"6.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"福州市轨道交通2号线工程项目建设\"}, {\"project\": \"福州地铁4号线工程项目建设\", \"l2\": \"6.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"福州市轨道交通4号线工程项目建设\"}, {\"project\": \"福州地铁5号线工程项目建设\", \"l2\": \"6.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"福州市轨道交通5号线工程项目建设\"}, {\"project\": \"福州地铁6号线工程项目建设\", \"l2\": \"6.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"福州市轨道交通6号线工程项目建设\"}, {\"project\": \"福州至长乐机场城际铁路（F1线）\", \"l2\": \"6.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"福州至长乐机场城际铁路（F1线）\"}], \"non_green_share_pct\": 0, \"notes\": \"募集资金全部用于归还有息债务，穿透后全部用于城市轨道交通建设类绿色低碳产业项目，无补充营运资金等非绿色用途。\"}"
+}

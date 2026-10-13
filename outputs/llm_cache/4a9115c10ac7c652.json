@@ -1,0 +1,14 @@
+{
+  "cache_key": "4a9115c10ac7c652e8263a26d4980fbf9d8e4f7826062e09f4b60551c57bdc42",
+  "bond_id": "jinneng_power_2026",
+  "model": "deepseek-flash",
+  "prompt_version": "v1",
+  "temperature": 0,
+  "thinking": "disabled",
+  "usage": {
+    "prompt_tokens": 2080,
+    "completion_tokens": 828
+  },
+  "created_utc": "2026-10-13T13:46:30+00:00",
+  "response_text": "{\n  \"projects\": [\n    {\n      \"project\": \"平鲁败虎堡风电场三期100MW风电项目\",\n      \"l2\": \"4.2\",\n      \"confidence\": \"high\",\n      \"alt_l2\": null,\n      \"evidence\": \"平鲁败虎堡风电场三期100MW风电项目\"\n    },\n    {\n      \"project\": \"宁武盘道梁48MW风力发电项目\",\n      \"l2\": \"4.2\",\n      \"confidence\": \"high\",\n      \"alt_l2\": null,\n      \"evidence\": \"宁武盘道梁48MW 风力发电项目\"\n    },\n    {\n      \"project\": \"右玉丁家窑总了山二期49.5MW风电项目\",\n      \"l2\": \"4.2\",\n      \"confidence\": \"high\",\n      \"alt_l2\": null,\n      \"evidence\": \"右玉丁家窑总了山二期49.5MW风电项目\"\n    },\n    {\n      \"project\": \"右玉丁家窑总了山一期49.5MW风电项目\",\n      \"l2\": \"4.2\",\n      \"confidence\": \"high\",\n      \"alt_l2\": null,\n      \"evidence\": \"右玉丁家窑总了山一期49.5MW 风电项目\"\n    },\n    {\n      \"project\": \"晋中平遥朱坑10万千瓦风电项目\",\n      \"l2\": \"4.2\",\n      \"confidence\": \"high\",\n      \"alt_l2\": null,\n      \"evidence\": \"晋中平遥朱坑10 万千瓦风电项目\"\n    },\n    {\n      \"project\": \"朔城区牛家岭二期50MW风电项目\",\n      \"l2\": \"4.2\",\n      \"confidence\": \"high\",\n      \"alt_l2\": null,\n      \"evidence\": \"朔城区牛家岭二期50MW 风电项目\"\n    },\n    {\n      \"project\": \"阳曲县侯村乡50MW风电项目\",\n      \"l2\": \"4.2\",\n      \"confidence\": \"high\",\n      \"alt_l2\": null,\n      \"evidence\": \"阳曲县侯村乡50MW 风电项目\"\n    },\n    {\n      \"project\": \"平鲁高家堰二期20万千瓦风力发电项目\",\n      \"l2\": \"4.2\",\n      \"confidence\": \"high\",\n      \"alt_l2\": null,\n      \"evidence\": \"平鲁高家堰二期20 万千瓦风力发电项目\"\n    },\n    {\n      \"project\": \"平鲁区红石峁15万千瓦风力发电项目\",\n      \"l2\": \"4.2\",\n      \"confidence\": \"high\",\n      \"alt_l2\": null,\n      \"evidence\": \"平鲁区红石峁15 万千瓦风力发电项目\"\n    },\n    {\n      \"project\": \"晋能天镇县70MW光伏发电项目\",\n      \"l2\": \"4.2\",\n      \"confidence\": \"high\",\n      \"alt_l2\": null,\n      \"evidence\": \"晋能天镇县70MW 光伏发电项目\"\n    },\n    {\n      \"project\": \"山西雁阳繁峙县一期100MW光伏发电项目\",\n      \"l2\": \"4.2\",\n      \"confidence\": \"high\",\n      \"alt_l2\": null,\n      \"evidence\": \"山西雁阳繁峙县一期100MW 光伏发电项目\"\n    },\n    {\n      \"project\": \"晋能怀仁70MW光伏发电项目\",\n      \"l2\": \"4.2\",\n      \"confidence\": \"high\",\n      \"alt_l2\": null,\n      \"evidence\": \"晋能怀仁70MW 光伏发电项目\"\n    }\n  ],\n  \"non_green_share_pct\": 0,\n  \"notes\": \"募集资金全部用于穿透后绿色低碳产业项目，无补充营运资金等非绿色用途。\"\n}"
+}

@@ -1,0 +1,14 @@
+{
+  "cache_key": "9f9eba38abe5c0bbd002fc3761f1d810a0b70759d73feb25d19ac4a605a786cd",
+  "bond_id": "cecep_2026",
+  "model": "deepseek-flash",
+  "prompt_version": "v1",
+  "temperature": 0,
+  "thinking": "disabled",
+  "usage": {
+    "prompt_tokens": 1951,
+    "completion_tokens": 384
+  },
+  "created_utc": "2026-10-13T13:46:13+00:00",
+  "response_text": "{\"projects\": [{\"project\": \"中节能广元剑阁天台山风电场项目\", \"l2\": \"4.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"主要安装50 台单机容量2,000kW 风力发电机组，总装机容量100MW\"}, {\"project\": \"新疆哈密风电基地二期项目景峡第三风电场B区200MW项目\", \"l2\": \"4.2\", \"confidence\": \"high\", \"alt_l2\": null, \"evidence\": \"装机规模20 万千瓦，建设内容包括风力发电系统\"}, {\"project\": \"临沂市动物无害化处理项目\", \"l2\": \"2.5\", \"confidence\": \"med\", \"alt_l2\": \"3.2\", \"evidence\": \"项目生产粗油脂0.14 万吨，处理固体废弃物量1.72 万吨\"}, {\"project\": \"承德环能热电有限责任公司续建项目\", \"l2\": \"4.2\", \"confidence\": \"high\", \"alt_l2\": \"6.4\", \"evidence\": \"建1台500 吨/天机械炉排焚烧炉以及配套的垃圾接收\"}, {\"project\": \"中节能(郯城)垃圾焚烧发电项目\", \"l2\": \"4.2\", \"confidence\": \"high\", \"alt_l2\": \"6.4\", \"evidence\": \"一期建设1 条400t/d 生活垃圾焚烧线，配1 台额定7.5MW 凝汽式汽轮发电机组\"}], \"non_green_share_pct\": 0, \"notes\": \"募集资金全部用于偿还绿色公司债券，穿透后全部用于风力发电、垃圾焚烧热电、生物质热电和无害化处理项目，无补充营运资金等非绿色用途。\"}"
+}

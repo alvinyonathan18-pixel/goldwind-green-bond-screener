@@ -1,0 +1,14 @@
+{
+  "cache_key": "1b13bb3fd28a12f1e3e64ab99a99737ce1706d594f3a90542b7c7ee6df9e4beb",
+  "bond_id": "yunnan_water_2023",
+  "model": "deepseek-flash",
+  "prompt_version": "v1",
+  "temperature": 0,
+  "thinking": "disabled",
+  "usage": {
+    "prompt_tokens": 1334,
+    "completion_tokens": 252
+  },
+  "created_utc": "2026-10-13T13:46:37+00:00",
+  "response_text": "{\"projects\": [{\"project\": \"云南省牛栏江红石岩堰塞湖整治工程项目\", \"l2\": \"6.4\", \"confidence\": \"med\", \"alt_l2\": \"5.2\", \"evidence\": \"偿还云南省牛栏江红石岩堰塞湖整治工程项目前期建设及运营产生的银行贷款\"}, {\"project\": \"牛栏江—滇池补水工程项目\", \"l2\": \"6.4\", \"confidence\": \"med\", \"alt_l2\": \"5.2\", \"evidence\": \"偿还牛栏江—滇池补水工程项目前期建设及运营产生的融资租赁借款\"}, {\"project\": \"云南省重点水源工程建设项目\", \"l2\": \"6.4\", \"confidence\": \"med\", \"alt_l2\": \"5.2\", \"evidence\": \"偿还云南省重点水源工程建设项目前期建设及运营产生的银行贷款\"}], \"non_green_share_pct\": 0, \"notes\": \"募集资金全部用于偿还三个水利工程项目前期建设及运营产生的有息债务，已穿透至对应项目；项目兼具水资源配置与水生态修复属性，故以环境基础设施6.4为主分类，生态保护修复5.2为备选。\"}"
+}

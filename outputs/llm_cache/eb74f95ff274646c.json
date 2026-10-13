@@ -1,0 +1,14 @@
+{
+  "cache_key": "eb74f95ff274646cd5524db4b040de8fd77a321d94922f2296bed11c6ab45d8d",
+  "bond_id": "fsh_water_2026",
+  "model": "deepseek-flash",
+  "prompt_version": "v1",
+  "temperature": 0,
+  "thinking": "disabled",
+  "usage": {
+    "prompt_tokens": 1730,
+    "completion_tokens": 220
+  },
+  "created_utc": "2026-10-13T13:46:21+00:00",
+  "response_text": "{\"projects\": [{\"project\": \"镇安污水处理厂项目\", \"l2\": \"2.3\", \"confidence\": \"high\", \"alt_l2\": \"6.4\", \"evidence\": \"镇安污水处理厂是佛山市第一座生活污水处理厂\"}, {\"project\": \"东鄱污水处理厂项目\", \"l2\": \"2.3\", \"confidence\": \"high\", \"alt_l2\": \"6.4\", \"evidence\": \"涉及绿色项目包括镇安污水处理厂项目、东鄱污水处理厂项目及沙岗污水处理厂项目\"}, {\"project\": \"沙岗污水处理厂项目\", \"l2\": \"2.3\", \"confidence\": \"high\", \"alt_l2\": \"6.4\", \"evidence\": \"涉及绿色项目包括镇安污水处理厂项目、东鄱污水处理厂项目及沙岗污水处理厂项目\"}], \"non_green_share_pct\": 0, \"notes\": \"募集资金全部用于偿还三座污水处理厂绿色项目产生的金融机构借款，穿透后均为污水处理项目。\"}"
+}
