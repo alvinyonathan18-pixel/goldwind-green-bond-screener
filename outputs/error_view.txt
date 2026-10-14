@@ -1,0 +1,206 @@
+6 of 10 bonds with a non-identical L2 set
+
+==============================================================================
+fsh_water_2026   [disjoint]
+==============================================================================
+HAND LABEL : L1 6  L2 6.4
+HAND NOTE  : high / alt none / non-green 0%
+DECLARED   : 6.4  (reference only)
+LLM RESULT : L2 2.3   alt 6.4
+  project 1: 镇安污水处理厂项目
+     l2=2.3  alt_l2=6.4  confidence=high
+     evidence: 镇安污水处理厂是佛山市第一座生活污水处理厂
+  project 2: 东鄱污水处理厂项目
+     l2=2.3  alt_l2=6.4  confidence=high
+     evidence: 涉及绿色项目包括镇安污水处理厂项目、东鄱污水处理厂项目及沙岗污水处理厂项目
+  project 3: 沙岗污水处理厂项目
+     l2=2.3  alt_l2=6.4  confidence=high
+     evidence: 涉及绿色项目包括镇安污水处理厂项目、东鄱污水处理厂项目及沙岗污水处理厂项目
+  non_green_share_pct=0   notes: 募集资金全部用于偿还三座污水处理厂绿色项目产生的金融机构借款，穿透后均为污水处理项目。
+
+SOURCE TEXT:
+本期中期票据拟发行金额为4.6亿元人民币，用于偿还发行人下属子公司佛山市禅城区污水处理有限公司绿色项目产生的金融机构借款。【表】单位：万元 序 号 借款单 位 借款穿 透用途 借款 银行 起始日 到期日 借款余额 本次拟使用 的募集资金 募集资金使 用比例（%） 佛山市 禅城区 污水处 理有限 公司 镇安污 水处理 厂项目、 东鄱污 水处理 厂项目 及沙岗 污水处 理厂项 目 招商 银行 2025.03.27 2035.03.24 43,740 43,600 94.78 招商 银行 2026.06.17 2035.03.24 2,400 2,400 5.22 合计 46,140 46,000 100.00。本期债券募集资金拟全部用于偿还发行人下属子公司佛山市禅城区污水处理有限公司绿色项目产生的金融机构借款，涉及绿色项目包括镇安污水处理厂项目、东鄱污水处理厂项目及沙岗污水处理厂项目。上述三座污水处理厂均采用BOT模式运营，项目实施运营主体为发行人下属子公司佛山市禅城区污水处理有限公司。（1）镇安污水处理厂项目镇安污水处理厂是佛山市第一座生活污水处理厂，规划建设总规模为日处理污水35万立方米，工程分四期实施。该项目总投资5.123 亿元，其中一期2.07 亿元，二期1.25 亿元，三期0.703 亿元，提标改造工程1.1 亿元。该厂位于禅城区环市街道镇安村东侧，首、二期工程占地20 公顷，主要收集禅城区东部和东南部约30.8 平方公里的城市生活污水，服务人口约39 万。首期工程规模10 万立方米/日，于1995 年底投产，污水处理工艺采用厌氧/好氧活性污泥法（A/O 工艺），该厂出水水质指标符合设计要求并达到排放标准。二期工程规模为日处理污水10 万立方米，于2005 年9 月建成，2005 年10 月通过环保验收，并于当月投入运行。三期设计污水处理规模为5 万立方米/日，于2010年6月正式投产。镇安污水处理厂于2019年1月完成提标改造，本次改造对厂区一、二、三期工程实施提标升级，其中一二期工程均拟采用“改造现有生物池+ 纤维束滤池” 工艺，三期工程采用“纤维束滤池” 工艺，在现有的征地范围内新增相关构筑物及相关附属设施。根据《镇安污水处理厂提标改造工程环境影响报告表的批复》，镇安污水处理厂出水执行《汾江河流域水污染排放标准》（DB44/1366-2014）、《城镇污水处理厂污染物排放标准》（GB18918-2002）一级A标准以及广东省《水污染排放限值》（DB44/26-2001）第二时段一级标准的较严者。2025年，镇安污水处理厂污水处理量为8,243.27万吨。
+
+VERDICT (MODEL_ERROR | LABEL_TOO_NARROW | AMBIGUOUS | PROTOCOL): MODEL_ERROR
+WHY (one or two sentences, cite the catalogue entry): Three BOT wastewater plants are municipal/rural wastewater treatment construction and operation, which is 6.4.7. 2.3 (water-body remediation: key basins, black-odour water) covers the water body, not the treatment plant. The hand label 6.4 sits in the model's alt.
+
+
+==============================================================================
+cecep_2026   [overlap_mixed]
+==============================================================================
+HAND LABEL : L1 3;4;6  L2 3.2;4.2;6.4
+HAND NOTE  : low / alt 2.5 / non-green 0% / 2.5 = animal disposal / 3.2 and 6.4 both cover waste incineration
+LLM RESULT : L2 2.5;4.2   alt 3.2;6.4
+  project 1: 中节能广元剑阁天台山风电场项目
+     l2=4.2  alt_l2=None  confidence=high
+     evidence: 主要安装50 台单机容量2,000kW 风力发电机组，总装机容量100MW
+  project 2: 新疆哈密风电基地二期项目景峡第三风电场B区200MW项目
+     l2=4.2  alt_l2=None  confidence=high
+     evidence: 装机规模20 万千瓦，建设内容包括风力发电系统
+  project 3: 临沂市动物无害化处理项目
+     l2=2.5  alt_l2=3.2  confidence=med
+     evidence: 项目生产粗油脂0.14 万吨，处理固体废弃物量1.72 万吨
+  project 4: 承德环能热电有限责任公司续建项目
+     l2=4.2  alt_l2=6.4  confidence=high
+     evidence: 建1台500 吨/天机械炉排焚烧炉以及配套的垃圾接收
+  project 5: 中节能(郯城)垃圾焚烧发电项目
+     l2=4.2  alt_l2=6.4  confidence=high
+     evidence: 一期建设1 条400t/d 生活垃圾焚烧线，配1 台额定7.5MW 凝汽式汽轮发电机组
+  non_green_share_pct=0   notes: 募集资金全部用于偿还绿色公司债券，穿透后全部用于风力发电、垃圾焚烧热电、生物质热电和无害化处理项目，无补充营运资金等非绿色用途。
+
+SOURCE TEXT:
+本期绿色中期票据拟募集资金15 亿元，拟全部用于偿还中国节能环保集团公司2016 年第二期绿色公司债券，穿透后全部用于风力发电项目、垃圾焚烧热电项目、生物质热电项目和无害化处理项目。表：本期债务融资工具募集资金用途明细表债券简称发行规模（亿元）起息日到期日当前余额（亿元）拟使用募集资金规模（亿元）G16 节能415.002016/9/262026/9/2615.0015.00合计--15.0015.00上述募集资金用途为偿还G16 节能4 债券余额15 亿元，不包含该笔债券利息金额。本期债券拟募集资金具体使用计划如下表所示。表：本期债券募集资金穿透后使用计划表序号项目名称项目概况项目总投资（亿元）拟使用本期债券募集资金（亿元）募集资金占项目总投资比例(%)募集资金用途中节能广元剑阁天台山风电场项目项目单位为中节能风力发电四川有限公司，主要安装50 台单机容量2,000kW 风力发电机组，总装机容量100MW，采用一机一变，设50 台35kV 箱式变压器；配套建设35kV 集电线路75km，新建220kV 升压站1个，场址面积约105 平方公里。项目于2016 年8 月开始建设，2018 年4月投产运营，2025 年，项目实现上网电量17,860.79 万千瓦时。6.822.1431.34偿还“G16节能4”新疆哈密风电基地二期项目景峡第三风电场B区200MW项目项目位于哈密市，由中节能风力发电（哈密）有限公司投资建设，装机规模20 万千瓦，建设内容包括风力发电系统、箱式变压器、集电线路、监控中心、220 千伏升压站、道路工程等，建设用地48.15 公顷。项目于2016 年6 月开始建设，2019 年5 月投产运营，2025 年，项目实现上网电量40,721.06 万千瓦时。13.35.4440.89中国节能环保集团有限公司2026 年度第三期绿色中期票据临沂市动物无害化处理项目项目厂址位于中节能（临沂）环保能源有限公司现有厂区内。主体工程包括干化系统、物料破碎系统、进料系统等，配套建设冷库系统、消毒系统等辅助工程。项目于2015 年6 月开始建设，2017 年1 月投产运营，2025年，项目生产粗油脂0.14 万吨，处理固体废弃物量1.72 万吨。0.470.3573.4承德环能热电有限责任公司续建项目项目位于承德环能热电有限责任公司厂区，依托原有配套公辅设施，建1台500 吨/天机械炉排焚烧炉以及配套的垃圾接收、储存及输送系统、余热锅炉、烟化系统、渗滤液收集池、灰渣处理系统。项目于2017 年8 月开始建设，2018 年11 月投产运营，2025 年，项目实现上网电量6,094.13万千瓦时，供汽量15.88 万吨（供汽压强0.6MPa,供汽温度310℃），处理固体废弃物量43.53 万吨。1.530.9260.29中节能(郯城)垃圾焚烧发电项目项目位于临沂市郯城县，总占地面积100 亩，一期建设1 条400t/d 生活垃圾焚烧线，配1 台额定7.5MW 凝汽式汽轮发电机组，配套建设车间、厂房及其附属设施，购置生产设备50台（套），二期扩建1 条400t/d 生活垃圾焚烧线（含烟气净化线）和1 台7.5MW 的发电机组，购置国内先进生产设备34 台（套）。项目于2015年11 月开始建设，一期和二期分别于2017 年9 月和2018 年5 月投产运营，2025 年，项目实现上网电量8,020.47 万千瓦时，处理固体废弃物量28.50 万吨。
+
+AMBIGUOUS
+The model puts the waste incineration power projects (Chengde, Tancheng; about 47% of proceeds) in 4.2 with 6.4 only as alt, and never offers 3.2. The catalogue lists biomass power (code 4417) under both 4.2.3 and 3.2.6 (power from household waste and sludge), and the hand label follows the project's own waste-to-energy rule (3.2;6.4), which the prompt does not contain; 2.5 for animal disposal (about 2%) is defensible, and the hand label keeps it as alt.
+
+
+==============================================================================
+cepg_env_2025   [subset_missing_gold]
+==============================================================================
+HAND LABEL : L1 3;6  L2 3.2;6.4
+HAND NOTE  : med / alt none / non-green 0% / two L2: waste as recycled resource (3.2) and environmental infrastructure (6.4)
+LLM RESULT : L2 6.4   alt 4.2
+  project 1: 中节能（沧州）环保能源有限公司扩建项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 中节能（沧州）环保能源有限公司扩建项目
+  project 2: 成都市祥福生活垃圾焚烧发电厂项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 成都市祥福生活垃圾焚烧发电厂项目
+  project 3: 开封市城市生活垃圾焚烧发电项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 开封市城市生活垃圾焚烧发电项目
+  project 4: 中节能保南（蠡县）环保能源有限公司项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 中节能保南（蠡县）环保能源有限公司项目
+  project 5: 毕节市中心城区生活垃圾焚烧发电项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 毕节市中心城区生活垃圾焚烧发电项目
+  project 6: 合肥市肥西县生活垃圾焚烧发电项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 合肥市肥西县生活垃圾焚烧发电项目
+  project 7: 蔚县环保能源热电项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 蔚县环保能源热电项目
+  project 8: 丽江市生活垃圾焚烧发电项目（一期工程）
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 丽江市生活垃圾焚烧发电项目（一期工程）
+  project 9: 黄骅市生活垃圾焚烧发电项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 黄骅市生活垃圾焚烧发电项目
+  project 10: 天水循环产业园项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 天水循环产业园项目
+  project 11: 盐山县生活垃圾焚烧发电项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 盐山县生活垃圾焚烧发电项目
+  project 12: 中节能（肥城）环保能源项目（生活垃圾焚烧发电项目）
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 中节能（肥城）环保能源项目（生活垃圾焚烧发电项目）
+  project 13: 保定环保热电工程项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 保定环保热电工程项目
+  project 14: 生活垃圾焚烧发电二期扩建暨餐厨垃圾无害化处置共建项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 生活垃圾焚烧发电二期扩建暨餐厨垃圾无害化处置共建项目
+  project 15: 承德环能热电有限责任公司续建工程项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 承德环能热电有限责任公司续建工程项目
+  project 16: 承德环能热电有限责任公司4#炉建设工程项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 承德环能热电有限责任公司4#炉建设工程项目
+  project 17: 贞兴生活垃圾焚烧发电项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 贞兴生活垃圾焚烧发电项目
+  project 18: 中节能（涞水）生活垃圾焚烧发电项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 中节能（涞水）生活垃圾焚烧发电项目
+  project 19: 东光县生活垃圾焚烧发电项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 东光县生活垃圾焚烧发电项目
+  project 20: 曲周县垃圾综合处理发电项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 曲周县垃圾综合处理发电项目
+  project 21: 龙南市（三南）生活垃圾焚烧发电项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 龙南市（三南）生活垃圾焚烧发电项目
+  project 22: 平顶山市城市生活垃圾焚烧发电项目
+     l2=6.4  alt_l2=4.2  confidence=high
+     evidence: 平顶山市城市生活垃圾焚烧发电项目
+  non_green_share_pct=0   notes: 募集资金用于偿还/置换绿色中期票据，穿透后全部用于所列垃圾焚烧发电及热电项目建设运营，无补充营运资金等非绿色用途。
+
+SOURCE TEXT:
+经交易商协会注册，发行人将于注册有效期内根据发行计划发行债务融资工具。本期绿色中期票据拟募集资金10 亿元，募集资金用于偿还/置换债券“23 中国环保MTN001（绿色）”（全称“中国环境保护集团有限公司2023 年度第一期绿色中期票据”）。募集资金经穿透后，最终全部用于绿色产业项目的建设与运营。【表】单位：亿元 序 号 建设单位 项目名称 项目 总投资 拟使用本期债 券募集资金 募集资金 用途 中节能（沧州） 环保能源有限公 司 中节能（沧州）环 保能源有限公司扩 建项目 3.61 10.00 偿还/置换 23 中国环保 MTN001（绿 色），募集资 金用途经穿透 后用于绿色产 业项目建设与 运营 成都中节能再生 能源有限公司 成都市祥福生活垃 圾焚烧发电厂项目 8.51 开封中节能再生 能源有限公司 开封市城市生活垃 圾焚烧发电项目 4.19 中节能保南（蠡 县）环保能源有 限公司 中节能保南（蠡 县）环保能源有限 公司项目 5.46 中节能（毕节） 环保能源有限公 司 毕节市中心城区生 活垃圾焚烧发电项 目 5.40 中节能（肥西） 环保能源有限公 司 合肥市肥西县生活 垃圾焚烧发电项目 10.90 中节能（蔚县） 环保能源有限公 司 蔚县环保能源热电 项目 4.16 中节能（丽江） 环保能源有限公 司 丽江市生活垃圾焚 烧发电项目（一期 工程） 3.45 中节能（黄骅） 环保能源有限公 司 黄骅市生活垃圾焚 烧发电项目 3.69 序 号 建设单位 项目名称 项目 总投资 拟使用本期债 券募集资金 募集资金 用途 中节能（天水） 环保能源有限公 司 天水循环产业园项 目 3.26 中节能（盐山） 环保能源有限公 司 盐山县生活垃圾焚 烧发电项目 4.58 中节能（肥城） 环保能源有限公 司 中节能（肥城）环 保能源项目（生活 垃圾焚烧发电项 目） 4.23 中节能（保定） 环保能源有限公 司 保定环保热电工程 项目 4.34 中节能（保定） 环保能源有限公 司 生活垃圾焚烧发电 二期扩建暨餐厨垃 圾无害化处置共建 项目 6.89 承德环能热电有 限责任公司 承德环能热电有限 责任公司续建工程 项目 1.54 承德环能热电有 限责任公司 承德环能热电有限 责任公司4#炉建设 工程项目 1.94 中节能（贞丰） 环保能源有限公 司 贞兴生活垃圾焚烧 发电项目 3.28 中节能（涞水） 环保能源有限公 司 中节能（涞水）生 活垃圾焚烧发电项 目 4.99 中节能（东光） 环保能源有限公 司 东光县生活垃圾焚 烧发电项目 7.69 中节能（曲周） 环保能源有限公 司 曲周县垃圾综合处 理发电项目 4.49 中节能（龙南） 环保能源有限公 司 龙南市（三南）生 活垃圾焚烧发电项 目 4.05 中节能（平顶 山）环保能源有 限公司 平顶山市城市生活 垃圾焚烧发电项目 4.69 合计 105.34 10.00 / 本期债务融资工具发行拟募集资金人民币10 亿元，穿透后全部用于绿色项目的建 设。 本期债券募集资金对应项目均为垃圾焚烧发电项目（含六个垃圾焚烧热电项 目），均已取得当地环保部门的环评批复，属于符合环保要求的垃圾焚烧电站建设运 营及生活垃圾减量化、无害化。
+
+AMBIGUOUS
+All 22 projects get l2 6.4 with alt 4.2, so 6.4 matches but 3.2 never appears; the one-L2 limit does not explain this because the alt is 4.2, not 3.2. The catalogue lists power from household waste under both 3.2.6 and 4.2.3, and the hand label's 3.2 follows the project's waste-to-energy rule (3.2;6.4), which the prompt does not contain.
+
+
+==============================================================================
+changzhou_binjiang_2020   [disjoint]
+==============================================================================
+HAND LABEL : L1 1;6  L2 1.3;6.5
+HAND NOTE  : med / alt none / non-green 50% / two L2: energy-saving retrofit (1.3) and urban energy infrastructure (6.5)
+LLM RESULT : L2 4.2   alt 6.5
+  project 1: 常州高新区清洁供热替代工程项目
+     l2=4.2  alt_l2=6.5  confidence=high
+     evidence: 常州高新区清洁供热替代工程项目
+  non_green_share_pct=50   notes: 2.50亿元用于补充营运资金，无绿色类别；募投项目为清洁供热替代工程，属清洁能源设施建设和运营。
+
+SOURCE TEXT:
+本期债券募集资金共5.00 亿元，其中2.50 亿元拟用于常州高新区清洁供热替代工程项目（以下简称“募投项目”），2.50 亿元拟用于补充发行人营运资金，如下表所示。表：本期债券募集资金用途表单位：万元、%募集资金投向项目投资总额拟使用募集资金额度占总投资比例常州高新区清洁供热替代工程项目32,000.0025,000.0077.54补充营运资金-25,000.00-合计32,000.0050,000.00-常州高新区清洁供热替代工程项目建设主体为常州滨江供热管网有限公司，为公司的全资子公司。发行人不承担政府融资职能，本期债券不涉及新增地方政府债务。1、项目建设的背景和必要性（1）党的十九大报告指出，要以共抓大保护、不搞大开发为导向推动长江经济带的发展。要坚持节约优先、保护优先、自然恢复为主的方针，形成节约资源和保护环境的空间格局、产业结构、生产方式、生活方式，还自然以宁静、和谐、美丽。推进绿色发展，着力解决突出环境问题，加大生态系统保护力度。习近平总书记在第二次长江经济带发展座谈会上提出，要正确把握整体推进和重点突破的关系，全面做好长江生态环境保护修复工作，探索协同推进生态优先和绿色发展的新路子。（2）作为经济社会发展的基础和必备条件，积极发展为推进城镇化建设积蓄能量、增添后劲，常州滨开区作为国家高新技术产业开发区，已进入了发展和改革的新阶段。加快清洁替代燃料项目的推进，是治理区域乃至全国燃煤污染的有效途径。（3）募投项目常州高新区清洁供热替代工程将淘汰管网覆盖范围内的燃煤锅炉和散煤，并实现对终端热用户的统一售价，将现有分散热网资源整合统一，进一步推进区域热力市场整合，促进新北区供热协调发展，有利于长江生态保护和污染整治目标的实现。
+
+MODEL_ERROR
+The text says coal boilers are phased out and heat networks are merged, but names no heat source; the 4.2 heat entries I checked (4.2.2, 4.2.3, 4.2.5, 4.2.6, 4.2.9) each require a named clean source, so 4.2 is unsupported and the model's high confidence has no basis in its evidence (the project name only). The model's alt 6.5 (district heating, 6.5.3) matches the hand label; the hand label's 1.3 is also not confirmed by the text.
+
+
+==============================================================================
+henan_water_2021   [subset_missing_gold]
+==============================================================================
+HAND LABEL : L1 2;5  L2 2.3;5.2
+HAND NOTE  : med / alt none / non-green 0% / two L2: water pollution control (2.3) and ecological restoration (5.2) / revised after seeing LLM: rural revitalization share finances water-pollution loans (was 30 pct)LLM RESULT : L2 2.3   alt 5.2
+  project 1: 栾川县伊河上游水污染综合防治PPP项目
+     l2=2.3  alt_l2=None  confidence=high
+     evidence: 栾川县伊河上游水污染综合防治PPP 项目
+  project 2: 平舆县水环境治理和生态修复工程PPP项目
+     l2=2.3  alt_l2=5.2  confidence=high
+     evidence: 平舆县水环境治理和生态修复工程PPP 项目
+  project 3: 新蔡县水系联通项目一期工程PPP项目
+     l2=2.3  alt_l2=None  confidence=high
+     evidence: 新蔡县水系联通项目一期工程PPP 项目
+  project 4: 汝南县中心城区水系环境综合治理PPP项目
+     l2=2.3  alt_l2=None  confidence=high
+     evidence: 汝南县中心城区水系环境综合治理PPP项目
+  non_green_share_pct=0   notes: 全部募集资金用于偿还绿色项目建设借款，可穿透至具体项目；其中1.5亿元（30%）用于乡村振兴相关的水污染防治、环境治理工程借款，仍属绿色项目，故非绿色占比为0。
+
+SOURCE TEXT:
+经交易商协会注册，发行人将于注册有效期内根据发行计划发行待偿还余额不超过【9】亿元的中期票据。本期债务融资工具拟募集资金5 亿元，全部资金用于偿还发行人下属子公司绿色项目建设金融机构借款, 涉及项目为栾川县伊河上游水污染综合防治PPP 项目、平舆县水环境治理和生态修复工程PPP 项目、新蔡县水系联通项目一期工程PPP 项目、汝南县中心城区水系环境综合治理PPP项目等绿色项目。其中1.5 亿元用于乡村振兴相关用途,具体为偿还发行人下属子公司为脱贫摘帽地区水污染防治、环境治理等工程产生的借款，募集资金拟用于乡村振兴用途的占比为30％。【表】单位：万元 序号 借款人 金融机构 借款金额 借款起始 日 借款到期 日 借款利率 募集使用 金额 是否能够 提前偿还 借款用途 借款种类 栾川伊源河 水生态开发 有限公司 国家开发银行 89,500.00 2018-10-15 2033-10-15 5.09% 5,050.00 是 栾川县伊 河上游水 污染综合 防治PPP 项目 固定资产 贷款 中原银行 28,705.63 2018-02-01 2033-02-01 5.684% 2,250.00 是 固定资产 贷款 河南水投舆 源水生态实 业有限公司 中国工商银行 56,961.00 2020-04-30 2034-11-25 4.80% 2,200.00 是 平舆县水 环境治理 和生态修 复工程 PPP 项目 固定资产 贷款 中国银行 19,800.00 2019-09-30 2032-12-21 5.39% 800.00 是 固定资产 贷款 国家开发银行 50,000.00 2019-08-12 2037-11-10 5.145% 1,400.00 是 固定资产 贷款 河南水投蔡 州水生态有 限公司 中国工商银行 49,650.00 2019-08-30 2034-08-30 4.90% 2,740.00 是 新蔡县水 系联通项 目一期工 程PPP 项 目 固定资产 贷款 渤海银行 13,000.00 2017-12-04 2032-12-04 6.00% 560.00 是 固定资产 贷款 河南汝宁水 利投资建设 有限公司 中国农业银行 26,000.00 2020-01-20 2033-12-26 4.75% 10,800.00 是 汝南县中 心城区水 系环境综 合治理 PPP 项目 固定资产 贷款 国家开发银行 65,500.00 2019-02-02 2033-03-26 4.50% 18,500.00 是 固定资产 贷款 中国光大银行 14,733.88 2019-10-31 2029-09-20 6.415% 5,700.00 是 固定资产 贷款 合计 413,850.51 50,000.00。
+
+PROTOCOL
+2.3 is returned for all four projects (Runan alone is 70% of proceeds) and 5.2 appears as alt only for Pingyu, whose title names both water-environment treatment and ecological restoration; the prompt allows one l2 per project. 5.2.11 includes natural river-system connectivity restoration (Xincai), for which the model gives no alt, and the hand label's 5.2 rests on at most about 15% of proceeds (Pingyu 4,400 plus Xincai 3,300 of 50,000 wan).
+
+
+==============================================================================
+yunnan_water_2023   [disjoint_hits_gold_alt]
+==============================================================================
+HAND LABEL : L1 2;5  L2 2.3;5.2
+HAND NOTE  : low / alt 6.4 / non-green 0%
+LLM RESULT : L2 6.4   alt 5.2
+  project 1: 云南省牛栏江红石岩堰塞湖整治工程项目
+     l2=6.4  alt_l2=5.2  confidence=med
+     evidence: 偿还云南省牛栏江红石岩堰塞湖整治工程项目前期建设及运营产生的银行贷款
+  project 2: 牛栏江—滇池补水工程项目
+     l2=6.4  alt_l2=5.2  confidence=med
+     evidence: 偿还牛栏江—滇池补水工程项目前期建设及运营产生的融资租赁借款
+  project 3: 云南省重点水源工程建设项目
+     l2=6.4  alt_l2=5.2  confidence=med
+     evidence: 偿还云南省重点水源工程建设项目前期建设及运营产生的银行贷款
+  non_green_share_pct=0   notes: 募集资金全部用于偿还三个水利工程项目前期建设及运营产生的有息债务，已穿透至对应项目；项目兼具水资源配置与水生态修复属性，故以环境基础设施6.4为主分类，生态保护修复5.2为备选。
+
+SOURCE TEXT:
+本期债务融资工具募集资金拟全部用于偿还牛栏江-滇池补水工程、云南省牛栏江红石岩堰塞湖整治工程项目及云南省重点水源工程建设项目的前期建设及运营产生的银行贷款等金融机构有息债务。其中3,768.00万元用于偿还云南省牛栏江红石岩堰塞湖整治工程项目前期建设及运营产生的银行贷款；30,950.88万元用于偿还牛栏江—滇池补水工程项目前期建设及运营产生的融资租赁借款；15,281.12万元用于偿还云南省重点水源工程建设项目前期建设及运营产生的银行贷款。本期债务融资工具基础发行规模2亿元，发行金额上限5亿元。【表】单位：万元 项目名称 项目投资规 模 拟使用募集 资金额度 募集资金用途 云南省牛栏江红石岩 堰塞湖整治工程项目 794,200.00 3,768.00 偿还项目前期建设及运营产 生的银行贷款 牛栏江—滇池补水工 程项目 330,735.00 30,950.88 偿还项目前期建设及运营产 生的融资租赁借款 云南省重点水源工程 建设项目 2,096,533.26 15,281.12 偿还项目前期建设及运营产 生的银行贷款 合计 2,890,733.26 50,000.00 /。
+
+AMBIGUOUS
+The largest component (Niulan River-Dianchi water replenishment, 30,950.88 wan, about 62%) has no clean entry: 6.4.3 covers urban public water supply only and 6.4.4 only digital platforms, while 2.3.1 covers source protection and backup sources and 5.2.11 covers river-system connectivity and flood or drought control (a fit for the barrier lake part, about 8%). The text states only loan repayment, so neither the model's 6.4 (confidence med) nor the hand label's 2.3;5.2 (confidence low) can be confirmed.
+
+
