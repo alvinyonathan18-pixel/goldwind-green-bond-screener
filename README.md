@@ -148,7 +148,7 @@ Verdicts are written by hand in `outputs/error_view.txt`, one per non-exact bond
 - Protocol mismatch: prompt `v1` allows one L2 plus one alt per project, the hand labels allow two L2 per project. The prompt also does not contain the waste-to-energy rule used in the labels.
 - n = 10, so the confidence intervals are wide. 4.2 is over-represented in the sample.
 - Only 4 of 10 bonds have a valid declared category, so agreement with it is a weak check.
-- changzhou (2019 edition) and henan and yunnan (2019 and 2021 editions) were issued under older catalogues than the 2025 one used here.
+- The texts of changzhou (2019 edition) and of henan and yunnan (2019 and 2021 editions) cite older catalogue editions than the 2025 one used here.
 - The error verdicts were written by the same person who made the labels, after seeing the model output.
 - One model (DeepSeek) and one prompt version. Prompt `v2` (two L2 per project) is not run.
 
