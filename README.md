@@ -108,6 +108,38 @@ Question: how fully does the case bond's prospectus (募集说明书, mùjí shu
 - **Evidence.** `data/prospectus/gbp_evidence.csv` has one row per bond and criterion: score, confidence (high, medium or low), source pages, the quoted Chinese source text and a rationale. The scores are manual judgments.
 - **Script.** `src/gbp_scorer.py` does not judge. It checks that every bond has all 14 criteria exactly once, that scores are 0, 1 or 2, that every row has a source page and a rationale, and that quoted text is present whenever the score is above 0. It then sums scores per pillar.
 - **Outputs.** `data/processed/gbp_scores_detail.csv` and `data/processed/gbp_scores_summary.csv`. No network access is needed.
+### Results
+
+Case bond only (26金风科技MTN002). Evidence comes from the prospectus and the 联合赤道 pre-issuance assessment report. Every score is a manual judgment with a quoted source passage in `data/prospectus/gbp_evidence.csv`.
+
+| Pillar | Score | Maximum | Share |
+|---|---|---|---|
+| Use of Proceeds (UoP) | 5 | 10 | 50% |
+| Process for Project Evaluation and Selection (PES) | 4 | 6 | 67% |
+| Management of Proceeds (MoP) | 4 | 6 | 67% |
+| Reporting (REP) | 5 | 6 | 83% |
+| **Total** | **18** | **28** | **64%** |
+
+| Criterion | Score | Confidence |
+|---|---|---|
+| U1 Taxonomy category | 1 | high |
+| U2 Project specificity | 1 | high |
+| U3 Environmental benefit quantified | 2 | high |
+| U4 Directness of link to green asset | 1 | high |
+| U5 Refinancing and look-back | 0 | high |
+| P1 Process and responsible body | 1 | high |
+| P2 Environmental and social risk | 1 | medium |
+| P3 Screening checked externally | 2 | high |
+| M1 Segregated account | 2 | high |
+| M2 Tracking and verification | 2 | high |
+| M3 Unallocated proceeds | 0 | medium |
+| R1 Allocation reporting | 2 | high |
+| R2 Impact reporting | 2 | high |
+| R3 External review | 1 | medium |
+
+- Use of Proceeds is the weakest pillar (50%). By the rubric wording, the 0 on U5 means refinancing is not disclosed or is allowed without limit, and the 1s on U1, U2 and U4 mean an ambiguous or inconsistent category, no project list with amounts per project, and an indirect link to the green asset.
+- The scores measure how completely the documents address each GBP component. They do not measure environmental impact. With one bond there is no benchmark and no comparison across issuers.
+- P2, M3 and R3 are medium confidence and have not been re-checked against the source pages.
 
 ### Limitations
 
