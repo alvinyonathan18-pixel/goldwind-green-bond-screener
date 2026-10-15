@@ -139,7 +139,7 @@ Case bond only (26金风科技MTN002). Evidence comes from the prospectus and th
 
 - Use of Proceeds is the weakest pillar (50%). By the rubric wording, the 0 on U5 means refinancing is not disclosed or is allowed without limit, and the 1s on U1, U2 and U4 mean an ambiguous or inconsistent category, no project list with amounts per project, and an indirect link to the green asset.
 - The scores measure how completely the documents address each GBP component. They do not measure environmental impact. With one bond there is no benchmark and no comparison across issuers.
-- P2, M3 and R3 are medium confidence and have not been re-checked against the source pages.
+- P2 and R3 are medium confidence: their quotes were matched against the source pages, but the scores depend on judgment (P2: whether issuer-level mitigation counts as specific; R3: no post-issuance verification commitment was found).
 
 ### Limitations
 
@@ -148,6 +148,7 @@ Case bond only (26金风科技MTN002). Evidence comes from the prospectus and th
 - The script validates structure, not truth. It does not check the quoted text against the PDF.
 - Reporting criteria (R1-R3) score the commitments written in the prospectus, not reports actually delivered after issuance.
 - Criteria with medium or low confidence are listed by the script and should be re-checked against the source documents.
+- The source documents (the MTN002 prospectus and the 联合赤道 SPO) are not stored in this repository. Page numbers in `gbp_evidence.csv` are the PDF page numbers of the prospectus and the printed page numbers of the SPO (two lower than the SPO PDF page numbers).
 
 ---
 
