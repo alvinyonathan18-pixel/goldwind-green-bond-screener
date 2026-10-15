@@ -2,7 +2,7 @@
 ### Case: Goldwind 金风科技 (002202.SZ / 02208.HK)
 
 Screens a Chinese green bond on two questions:
-1. **Is the bond actually green?** Scored against the ICMA Green Bond Principles (GBP) and the PBoC 《绿色债券支持项目目录》.
+1. **Is the bond actually green?** Scored against the four ICMA Green Bond Principles (GBP) core components with a 14-criterion, 0-2 checklist (module 2). Use-of-proceeds text is also mapped to the 《绿色金融支持项目目录（2025年版）》 (module 3).
 2. **Can the issuer service the debt?** Interest coverage and leverage computed from audited financial statements.
 
 Bond under review: **金风科技股份有限公司2026年度第二期绿色科技创新债券** (Goldwind 2026 Series 2 Green Technology Innovation Bond; short name 26金风科技MTN002(科创债), code 102683199). RMB 1 billion, 3+N perpetual medium-term note, issued 19 Aug 2026, coupon 2.00%, accounted for as equity. Pre-issuance green assessment by 联合赤道 (Lianhe Equator): grade G1.
@@ -95,6 +95,27 @@ Chinese terms:
 - 租赁负债 only exists from the 2019 lease-standard change, which breaks comparability before 2019.
 - Missing 应付债券, 租赁负债, 长期待摊费用摊销 and 使用权资产折旧 values are treated as 0.
 - Cross-checks cover 2022-2025 only, because yfinance history is limited.
+
+---
+
+## Module 2: GBP compliance scorer
+
+Question: how fully does the case bond's prospectus (募集说明书, mùjí shuōmíngshū) cover the four core components of the ICMA Green Bond Principles?
+
+### Design
+
+- **Rubric.** 14 criteria in four pillars: Use of Proceeds (5), Process for Project Evaluation and Selection (3), Management of Proceeds (3), Reporting (3). Each criterion is scored 0, 1 or 2, and the rubric in `src/gbp_scorer.py` states exactly what earns each score. Equal weights, maximum 28 points.
+- **Evidence.** `data/prospectus/gbp_evidence.csv` has one row per bond and criterion: score, confidence (high, medium or low), source pages, the quoted Chinese source text and a rationale. The scores are manual judgments.
+- **Script.** `src/gbp_scorer.py` does not judge. It checks that every bond has all 14 criteria exactly once, that scores are 0, 1 or 2, that every row has a source page and a rationale, and that quoted text is present whenever the score is above 0. It then sums scores per pillar.
+- **Outputs.** `data/processed/gbp_scores_detail.csv` and `data/processed/gbp_scores_summary.csv`. No network access is needed.
+
+### Limitations
+
+- Single rater. There is no second rater and no inter-rater agreement check.
+- The rubric is self-designed from the four GBP core components. It is not an ICMA or market-standard scoring method, and the 0-2 scale, the definition of a score of 1 and the equal weights are the author's assumptions.
+- The script validates structure, not truth. It does not check the quoted text against the PDF.
+- Reporting criteria (R1-R3) score the commitments written in the prospectus, not reports actually delivered after issuance.
+- Criteria with medium or low confidence are listed by the script and should be re-checked against the source documents.
 
 ---
 
