@@ -1,6 +1,5 @@
 ﻿akshare==1.19.1
 annotated-types==0.8.0
-anthropic==1.11.0
 anyio==4.15.1
 argon2-cffi==25.1.0
 argon2-cffi-bindings==26.1.0
@@ -134,3 +133,4 @@ widgetsnbextension==4.0.16
 xlrd==2.0.2
 yfinance==1.7.0
 pymupdf==1.28.2
+openai==3.29.0
