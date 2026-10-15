@@ -3,9 +3,9 @@
 
 Screens a Chinese green bond on two questions:
 1. **Is the bond actually green?** Scored against the four ICMA Green Bond Principles (GBP) core components with a 14-criterion, 0-2 checklist (module 2). Use-of-proceeds text is also mapped to the 《绿色金融支持项目目录（2025年版）》 (module 3).
-2. **Can the issuer service the debt?** Interest coverage and leverage computed from audited financial statements.
+2. **Can the issuer service the debt?** Interest coverage and leverage computed from audited annual financial statements, plus the unaudited H1 2026 report for the LTM view.
 
-Bond under review: **金风科技股份有限公司2026年度第二期绿色科技创新债券** (Goldwind 2026 Series 2 Green Technology Innovation Bond; short name 26金风科技MTN002(科创债), code 102683199). RMB 1 billion, 3+N perpetual medium-term note, issued 19 Aug 2026, coupon 2.00%, accounted for as equity. Pre-issuance green assessment by 联合赤道 (Lianhe Equator): grade G1.
+Bond under review: **金风科技股份有限公司2026年度第二期绿色科技创新债券** (Goldwind 2026 Series 2 Green Technology Innovation Bond; short name 26金风科技MTN002(科创债), code 102683199). RMB 1 billion, 3+N perpetual medium-term note, issued 19 Aug 2026, coupon 2.00%, intended to be accounted for as equity (prospectus pp. 6, 24). Pre-issuance green assessment by 联合赤道 (Lianhe Equator): grade G1.
 
 > Student research project. Not investment advice. Not affiliated with Goldwind.
 
@@ -18,7 +18,7 @@ Bond under review: **金风科技股份有限公司2026年度第二期绿色科�
 | 1. Data collection | Annual financials from public sources, validated across providers | Done |
 | 2. GBP compliance scorer | 0-2 checklist across the four GBP pillars | Done |
 | 3. LLM project classifier | Maps use-of-proceeds text to the 《绿色金融支持项目目录（2025年版）》 (L1/L2) | Done (n=10 case study, descriptive) |
-| 4. Issuer credit health | Interest coverage, Debt/EBITDA, leverage trend, adjusted view | Done (annual; LTM pending) |
+| 4. Issuer credit health | Interest coverage, Debt/EBITDA, leverage trend, adjusted view | Done (annual and LTM) |
 
 ---
 
@@ -85,12 +85,34 @@ Chinese terms:
 - RMB 4.64 bn of perpetual instruments (其他权益工具) are booked as equity at FY2025 and are excluded from reported debt. Counting them lifts liabilities/assets from 71.66% to 74.45%.
 - Caveats: treating all 投资收益 as non-core is conservative (it includes JV income and possibly wind-farm disposal gains; the breakdown in the annual-report notes was not checked), so the adjusted figures are a lower bound. Distributions on perpetuals are not added to interest, so coverage is still flattered.
 
+### LTM view (twelve months to 30 June 2026)
+
+The annual ratios stop at the FY2025 balance sheet. `src/credit_ratios_ltm.py` rolls them forward with the 2026 half-year report: flow items are FY2025 + H1 2026 - H1 2025, balance-sheet items are taken at 30 June 2026. Definitions are identical to the annual table.
+
+| Ratio | FY2025 | LTM Jun-2026 |
+|---|---|---|
+| Interest coverage, EBIT/interest | 4.77x | 5.40x |
+| EBITDA/interest | 8.74x | 9.88x |
+| Total debt/EBITDA | 3.95x | 4.00x |
+| Total debt incl. long-term payables/EBITDA | 4.29x | 4.41x |
+| Net debt/EBITDA | 2.83x | 2.85x |
+| Liabilities/assets | 71.66% | 71.81% |
+| Adj. EBIT/interest | 3.06x | 3.85x |
+| Total debt/adj. EBITDA | 4.91x | 4.75x |
+| (Debt + perpetuals)/adj. EBITDA | 5.53x | 5.37x |
+
+- Leverage is flat. Total debt rose 7.4% (RMB 36.4bn to 39.1bn) while EBITDA rose 5.8% (RMB 9.2bn to 9.8bn), so debt/EBITDA moved from 3.95x to 4.00x.
+- Adjusted coverage improves from 3.06x to 3.85x. EBIT rose, and non-operating gains in the base period (mainly the fair-value gain in H1 2025) dropped out.
+- The H1 2026 figures are unaudited.
+- The 26金风科技MTN002 bond (RMB 1.0bn, 3+N years, issued 19 August 2026) is not in the 30 June balance sheet. The prospectus says the issuer intends to book it as equity (pp. 6 and 24), estimates that this lowers liabilities/assets by about 1.02% from the FY2025 level, and lists reclassification to debt as a risk (p. 19). No pro-forma is computed here; under the perpetuals-as-debt view it would add RMB 1.0bn to the perpetuals.
+- The EBITDA/interest ratios reported by the company (8.44x for H1 2026, 7.13x for FY2025) are lower than the ones above. The company's denominator appears to be larger than P&L interest expense (about RMB 595m against RMB 464m in H1 2026, possibly including capitalised interest; this is inferred from its reported ratios, not stated in the report). This module uses P&L interest expense throughout, so its coverage ratios are higher than the reported ones.
+
 ---
 
 ## Known limitations
 
-- Annual ratios only. No LTM figure yet.
-- Goldwind's perpetual notes are booked in equity (其他权益工具: RMB 46.43 亿 at FY2025, incl. RMB 21.43 亿 renewable trust loans), so they are not in 应付债券 or in total debt. An adjusted-debt view that adds them is pending.
+- The LTM view uses the unaudited H1 2026 report and excludes the 26金风科技MTN002 bond, which was issued after 30 June 2026.
+- Goldwind's perpetual notes are booked in equity (其他权益工具: RMB 46.43 亿 at FY2025, incl. RMB 21.43 亿 renewable trust loans), so they are not in 应付债券 or in total debt. The adjusted views (Debt + perpetuals)/adj. EBITDA and (Liabilities + perpetuals)/assets add them back.
 - 长期应付款 is mainly warranty retention (应付质量保证金) and finance-lease deposits, plus sale-leaseback payables (financing-like). It is excluded from base total debt; the broad version is shown as an upper bound.
 - 租赁负债 only exists from the 2019 lease-standard change, which breaks comparability before 2019.
 - Missing 应付债券, 租赁负债, 长期待摊费用摊销 and 使用权资产折旧 values are treated as 0.
@@ -108,6 +130,7 @@ Question: how fully does the case bond's prospectus (募集说明书, mùjí shu
 - **Evidence.** `data/prospectus/gbp_evidence.csv` has one row per bond and criterion: score, confidence (high, medium or low), source pages, the quoted Chinese source text and a rationale. The scores are manual judgments.
 - **Script.** `src/gbp_scorer.py` does not judge. It checks that every bond has all 14 criteria exactly once, that scores are 0, 1 or 2, that every row has a source page and a rationale, and that quoted text is present whenever the score is above 0. It then sums scores per pillar.
 - **Outputs.** `data/processed/gbp_scores_detail.csv` and `data/processed/gbp_scores_summary.csv`. No network access is needed.
+
 ### Results
 
 Case bond only (26金风科技MTN002). Evidence comes from the prospectus and the 联合赤道 pre-issuance assessment report. Every score is a manual judgment with a quoted source passage in `data/prospectus/gbp_evidence.csv`.
@@ -225,6 +248,7 @@ src/
   evaluate_classifier.py      module 3: metrics against hand labels
   show_errors.py              module 3: builds error_view.txt for manual verdicts
   credit_ratios.py            module 4
+  credit_ratios_ltm.py        module 4: LTM ratios
 docs/           research note (planned)
 outputs/        llm_cache/, llm_predictions.csv, eval_*.csv/txt, error_view.txt
 ```
@@ -238,6 +262,7 @@ pip install -r requirements.txt
 
 python src/data_collection.py   # writes data/raw and data/processed/goldwind_credit_inputs_annual.csv
 python src/credit_ratios.py     # writes data/processed/goldwind_credit_ratios_annual.csv
+python src/credit_ratios_ltm.py # writes data/processed/goldwind_credit_ratios_ltm.csv
 python src/extract_use_of_proceeds.py   # writes data/labels/corpus_extracted.csv
 python src/llm_classifier.py            # needs .env (see .env.example); writes outputs/llm_predictions.csv
 python src/evaluate_classifier.py       # writes outputs/eval_per_bond.csv and eval_summary.txt
@@ -248,7 +273,7 @@ Turn **VPN off** before running `data_collection.py`; Sina Finance requests fail
 ## Roadmap
 
 - [x] Adjusted EBIT/EBITDA and perpetuals-as-debt view
-- [ ] LTM ratios (FY2025 + H1 2026 − H1 2025)
+- [x] LTM ratios (FY2025 + H1 2026 − H1 2025)
 - [x] Extract use of proceeds from the 募集说明书
 - [x] GBP scorer (rubric 0-2 per pillar)
 - [x] LLM classifier with hand labels, `temperature=0`, cached responses, logged model and prompt version
