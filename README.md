@@ -270,6 +270,15 @@ python src/evaluate_classifier.py       # writes outputs/eval_per_bond.csv and e
 
 Turn **VPN off** before running `data_collection.py`; Sina Finance requests fail with SSL errors otherwise.
 
+## Analysis and research note
+
+- **Notebook:** [`notebooks/02_analysis.ipynb`](notebooks/02_analysis.ipynb) re-runs every figure from the CSVs in `data/` and `outputs/`: credit ratios, the 2025 deleveraging decomposition, the MTN002 pro-forma, GBP scores and the classifier evaluation.
+- **One-page note:** [`docs/goldwind_mtn002_note.md`](docs/goldwind_mtn002_note.md) summarises the findings.
+
+Headline findings: debt/EBITDA is flat at 4.00x LTM against 3.95x in FY2025; the 2025 improvement came from EBITDA, not debt paydown; MTN002 moves debt/EBITDA by at most 0.11x under any accounting treatment; the bond scores 18/28 on GBP documentation, weakest on use of proceeds.
+
+![Credit ratios](outputs/charts/credit_trends.png)
+
 ## Roadmap
 
 - [x] Adjusted EBIT/EBITDA and perpetuals-as-debt view
@@ -277,5 +286,5 @@ Turn **VPN off** before running `data_collection.py`; Sina Finance requests fail
 - [x] Extract use of proceeds from the 募集说明书
 - [x] GBP scorer (rubric 0-2 per pillar)
 - [x] LLM classifier with hand labels, `temperature=0`, cached responses, logged model and prompt version
-- [ ] Analysis notebook
-- [ ] One-page research note
+- [x] Analysis notebook
+- [x] One-page research note
