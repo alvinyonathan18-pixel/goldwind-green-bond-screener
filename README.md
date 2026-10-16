@@ -30,7 +30,7 @@ Bond under review: **金风科技股份有限公司2026年度第二期绿色科�
 | Eastmoney via `akshare` | Depreciation and amortisation (cash-flow statement) |
 | `yfinance` (2208.HK) and Eastmoney HK | Cross-check only (IFRS, 2022-2025) |
 
-- Key lines (revenue, pre-tax profit, interest expense, borrowings, D&A) were reconciled across providers for 2022-2025. See `notebooks/01_data_check.ipynb`.
+Key lines (revenue, pre-tax profit, interest expense, borrowings, D&A) were compared across providers (Sina Finance, East Money, Yahoo Finance) for 2022-2025. The comparison code is in `notebooks/01_data_check.ipynb`. The notebook is saved without outputs because it calls live data APIs (Yahoo Finance may be unreachable from mainland China), so a re-run reflects the data as of the run date.
 - A-share (CAS) and H-share (IFRS) figures differ slightly (FY2025 revenue: 730.23 vs 727.82 亿元). CAS is used because the bond prospectus follows CAS.
 - Total debt vs the prospectus's 有息债务 (RMB 326.90 / 347.93 / 324.32 亿 for 2025 / 2024 / 2023): bank borrowings match exactly. Our total is higher by 37.51 / 47.46 / 53.71 亿 because it also includes 租赁负债 (33.38 / 42.16 / 49.67 亿) and other non-current liabilities due within one year (4.13 / 5.29 / 4.04 亿). Bonds payable are zero in all three years.
 - Units: 亿元 (100 million RMB). Annual rows are 31 December year-end, cumulative.
@@ -104,8 +104,10 @@ The annual ratios stop at the FY2025 balance sheet. `src/credit_ratios_ltm.py` r
 - Leverage is flat. Total debt rose 7.4% (RMB 36.4bn to 39.1bn) while EBITDA rose 5.8% (RMB 9.2bn to 9.8bn), so debt/EBITDA moved from 3.95x to 4.00x.
 - Adjusted coverage improves from 3.06x to 3.85x. EBIT rose, and non-operating gains in the base period (mainly the fair-value gain in H1 2025) dropped out.
 - The H1 2026 figures are unaudited.
-- The 26金风科技MTN002 bond (RMB 1.0bn, 3+N years, issued 19 August 2026) is not in the 30 June balance sheet. The prospectus says the issuer intends to book it as equity (pp. 6 and 24), estimates that this lowers liabilities/assets by about 1.02% from the FY2025 level, and lists reclassification to debt as a risk (p. 19). No pro-forma is computed here; under the perpetuals-as-debt view it would add RMB 1.0bn to the perpetuals.
-- The EBITDA/interest ratios reported by the company (8.44x for H1 2026, 7.13x for FY2025) are lower than the ones above. The company's denominator appears to be larger than P&L interest expense (about RMB 595m against RMB 464m in H1 2026, possibly including capitalised interest; this is inferred from its reported ratios, not stated in the report). This module uses P&L interest expense throughout, so its coverage ratios are higher than the reported ones.
+
+The pro-forma effect of a RMB 1bn issue is computed in `notebooks/02_analysis.ipynb`. Debt/EBITDA stays between 3.90x and 4.11x across the four scenarios, so the issue is not material for leverage.
+
+The company reports EBITDA/interest of 8.44x and EBIT/interest of 4.94x for H1 2026 (6.45x and 3.80x for H1 2025). These are lower than this module's H1 2026 figures (10.83x and 6.34x) because the company divides by gross interest expense of RMB 595.4m (note 55, 财务费用 (cáiwù fèiyòng): 利息支出 (lìxī zhīchū), before RMB 131.5m of capitalised interest), while this module uses P&L interest expense of RMB 464.0m. Dividing this module's H1 EBIT and EBITDA by RMB 595.4m reproduces the company's 4.94x and 8.44x.
 
 ---
 

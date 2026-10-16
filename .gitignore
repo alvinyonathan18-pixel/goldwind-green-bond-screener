@@ -4,3 +4,6 @@ __pycache__/
 .ipynb_checkpoints/
 data/raw/
 data/prospectus/*.pdf
+outputs/labeling_view.txt
+outputs/llm_prompt_preview.txt
+src/show_input_text.py
