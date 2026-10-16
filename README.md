@@ -277,6 +277,7 @@ Turn **VPN off** before running `data_collection.py`; Sina Finance requests fail
 - Financial statements: Sina Finance, compared with East Money (via `akshare`) and Yahoo Finance (via `yfinance`) in `notebooks/01_data_check.ipynb`. The raw downloads are not committed; that notebook expects them in `data/raw/`. Collection code: `src/data_collection.py`.
 - Company documents: Goldwind 2026 half-year report (半年度报告, bànniándù bàogào) and the 26金风科技MTN002 prospectus (募集说明书, mùjí shuōmíngshū). The source PDFs are not included in this repository; `data/prospectus/gbp_evidence.csv` holds the evidence used for the GBP scoring.
 - Green bond criteria: ICMA Green Bond Principles.
+- `data/labels/corpus_extracted.csv` holds short extracts from the bond offering documents (each text field is under 1,600 characters), kept so the classifier evaluation can be reproduced. Copyright remains with the issuers.
 - `data/labels/gold_labels.csv` was labelled by hand by the author. One row was revised after seeing the classifier output (see its `label_note` column).
 
 ## Analysis and research note
