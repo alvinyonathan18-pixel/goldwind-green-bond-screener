@@ -272,6 +272,13 @@ python src/evaluate_classifier.py       # writes outputs/eval_per_bond.csv and e
 
 Turn **VPN off** before running `data_collection.py`; Sina Finance requests fail with SSL errors otherwise.
 
+## Data sources
+
+- Financial statements: Sina Finance, compared with East Money (via `akshare`) and Yahoo Finance (via `yfinance`) in `notebooks/01_data_check.ipynb`. The raw downloads are not committed; that notebook expects them in `data/raw/`. Collection code: `src/data_collection.py`.
+- Company documents: Goldwind 2026 half-year report (半年度报告, bànniándù bàogào) and the 26金风科技MTN002 prospectus (募集说明书, mùjí shuōmíngshū). The source PDFs are not included in this repository; `data/prospectus/gbp_evidence.csv` holds the evidence used for the GBP scoring.
+- Green bond criteria: ICMA Green Bond Principles.
+- `data/labels/gold_labels.csv` was labelled by hand by the author. One row was revised after seeing the classifier output (see its `label_note` column).
+
 ## Analysis and research note
 
 - **Notebook:** [`notebooks/02_analysis.ipynb`](notebooks/02_analysis.ipynb) re-runs every figure from the CSVs in `data/` and `outputs/`: credit ratios, the 2025 deleveraging decomposition, the MTN002 pro-forma, GBP scores and the classifier evaluation.
