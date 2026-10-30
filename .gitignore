@@ -7,3 +7,4 @@ data/prospectus/*.pdf
 outputs/labeling_view.txt
 outputs/llm_prompt_preview.txt
 src/show_input_text.py
+*.pdf
